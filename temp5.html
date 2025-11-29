@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tovino Thomas | Fan Page</title>
+    <link rel="stylesheet" href="temp.css">
+    <style> 
+    
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        
+            min-height: 100vh;
+            background: black;
+        }
+    
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            
+            background-color: #222;
+            color: white;
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 2000;
+        }
+    
+        header {
+        
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            
+            width: 150px;
+            
+        
+            background-color: rgba(0, 0, 0, 0.1); 
+            
+        
+            backdrop-filter: blur(8px); 
+            
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; 
+            z-index: 1000;
+            text-align: center;
+            justify-content: center;
+        }
+
+    
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+    
+        .menu-toggle {
+            display: none; 
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+    
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        /*
+        .hero {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            color: #555;
+            margin-bottom: 30px;
+        } */
+        .hero {
+            position: relative;
+            height: 80vh; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: fill; 
+            
+            z-index: 1;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 60px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-top: 10px;
+            color: #ddd;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+    
+        footer {
+            background-color: #ddd;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        footer ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            gap: 12px;
+        }
+        footer ul img {
+            display: block;
+            width: 20px;
+            height: auto;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+    
+        @media (max-width: 768px) {
+        
+            .top-bar {
+                display: none;
+            }
+
+        
+            header {
+                top: 0;
+            
+            }
+            
+        
+            body {
+                flex-direction: column;
+            }
+
+        
+            header {
+            
+                position: relative; 
+                
+                width: 100%;
+                height: auto;
+                background-color: #333;
+                flex-direction: row; 
+                padding: 10px 20px;
+                backdrop-filter: none;
+            }
+            header img {
+                display: none;
+            }
+
+        
+            main {
+                height: auto; 
+                overflow-y: visible;
+            }
+
+        
+            .menu-toggle {
+                display: block;
+            }
+
+        
+            /* nav ul {
+                display: none; 
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #333;
+                padding: 20px 0;
+                z-index: 10;
+            } 
+
+        
+            nav ul.show {
+                display: flex;
+            } */
+            nav ul {
+                display: flex; 
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #333;
+
+                padding: 0;
+
+                transition: max-height 0.5s ease-out, opacity 0.5s ease-out, padding 0.5s ease;
+            }
+
+            nav ul.show {
+                max-height: 500px; 
+                opacity: 1;       
+                padding: 20px 0;   
+            }
+
+        
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+            
+            nav {
+                margin-top: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!--- <div style="font-size: 24px; font-weight: bold; margin-bottom: 20px;" class="logo">Tovino T.</div> --->
+        <img src="logo.png" style="border-radius: 5px; width: 100px; height: 115.54px; padding-left: 25px;">
+        <nav>
+            <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+            
+            <ul>
+                <li><a href="temp5.html">Home</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="movie.html">Movies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--
+        <section class="hero">
+            <h1>TOVINO THOMAS</h1>
+            <h2>WELCOMES YOU ALL</h2>
+            <img src="https://placehold.co/600x400" alt="Placeholder Image">
+        </section> -->
+        <section class="hero">
+    
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="Timeline 1.mov" type="video/mp4">
+            </video>
+
+            <div class="overlay"></div>
+
+            <div class="hero-content">
+                <h1>TOVINO THOMAS</h1>
+            </div>
+
+        </section>
+
+        <footer style="background: black;">
+            <ul>
+                <img src="instagram-6.png">
+                <li><a href="https://www.instagram.com/tovinothomas" style="color: white;">Instagram</a></li>
+                <img src="twitter.svg">
+                <li><a href="https://x.com/ttovino" style="color: white;">Twitter</a></li>
+                <img src="facebook.svg">
+                <li><a href="https://www.facebook.com/ActorTovinoThomas/" style="color: white;">Facebook</a></li>
+            </ul>
+        </footer>
+    </main>
+
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        toggleButton.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

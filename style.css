@@ -1,0 +1,184 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow-x: hidden;
+}
+.main
+{
+    display: flex;
+    background: black;
+}
+.right-body
+{
+    background: black;
+    width: 175px;
+    min-height:100vh;
+}
+.logo
+{
+    width: 100px;
+    height: 115.54px;
+    border-radius: 5px;
+}
+.image-1
+{
+    margin-top: 115px;
+    margin-left: 40px;
+}
+.texts
+{
+    margin-top: 5px;
+}
+.left-text
+{
+    font-size: 14px;
+    font-family:oswald,sans-serif ;
+    color: white;
+    padding-left: 65px;
+    font-weight: bold;
+}
+.t1
+{
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+
+.t3
+{
+    margin-top: 40px;
+}
+.t4
+{
+    margin-top: 40px;
+}
+.t5
+{
+    margin-top: 40px;
+}
+.t6
+{
+    margin-top: 40px;
+}
+
+.crousel
+{
+    margin: 100px auto;
+    width: 90%;
+    height: 18em;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    gap: 1em;
+}
+.crousel::-webkit-scrollbar-button
+{
+    display: none;
+}
+.group
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 15s infinite linear;
+}
+.card
+{
+    flex: 0 0 5em;
+    height: 8em;
+    background: cornflowerblue;
+    font-size: 3rem;
+    border-radius: 0.2em;
+    text-align: center;
+}
+
+@keyframes spin
+{
+    from {translate:0;}
+    to {translate: -100%;}
+}
+
+.im1 
+{
+    height: 400px;
+    width: 300px;
+}
+.im2
+{
+    height: 400px;
+    width:300px;
+    align-content: center;
+}
+.im3
+{
+    padding-top: 25px;
+    height: 400px;
+    width:280px;
+    align-content: center;
+}
+.im4
+{
+    padding-top: 49px;
+    height: 350px;
+    width:250px;
+    align-content: center;
+}
+.im5
+{
+    padding-top: 49px;
+    height: 350px;
+    width:250px;
+    align-content: center;
+}
+.im6
+{
+    padding-top: 49px;
+    height: 350px;
+    width:250px;
+    align-content: center;
+}
+.content {
+    flex: 1;
+    color: white;
+}
+
+.page-title {
+    font-family:oswald,sans-serif ;
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+    margin-bottom: -70px;
+    text-transform: uppercase;
+}
+.m
+{
+    font-family:oswald,sans-serif ;
+    padding-left: 630px;
+}
+
+
+.tt
+{
+    color: white;
+    margin-left: 500px;
+}
+a {
+    text-decoration: none;
+    color: inherit; /* prevents default blue color */
+}
+.social-icons {
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.social-icons i {
+        color: white;
+        margin: 0 10px;
+        cursor: pointer;
+}
